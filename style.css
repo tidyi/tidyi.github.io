@@ -272,21 +272,22 @@ button:focus-visible, input:focus-visible { outline: 1px solid #ededed; outline-
   .prompt { font-size: 9px; }
   .statusbar { align-items: flex-start; padding: 9px 10px; }
   .terminal-location { display: none; }
-.music-control {
-  width: 100%;
-  justify-content: space-between;
-  gap: 8px;
-}
+  .music-control {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
 
-.track-title {
-  flex: 1;
-  min-width: 0;
-  font-size: 9px;
-}
+  .track-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 9px;
+  }
 
-.music-timeline {
-  width: 90px;
-}
+  .music-timeline {
+    width: 90px;
+  }
+
   .music-time { font-size: 8px; }
   .command-row { grid-template-columns: 84px minmax(0, 1fr); gap: 7px; }
 }
