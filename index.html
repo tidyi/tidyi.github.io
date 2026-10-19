@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="tidyi — personal terminal.">
+  <title>tidyi — terminal</title>
+  <link rel="icon" type="image/png" href="assets/profile.png">
+  <link rel="apple-touch-icon" href="assets/profile.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <video class="background-video" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
+    <source src="assets/music-video.mp4" type="video/mp4">
+  </video>
+  <div class="background-shade" aria-hidden="true"></div>
+
+  <section id="welcome-screen" class="welcome-screen" aria-label="Welcome">
+    <main class="welcome-content">
+      <h1>tidyi<span>.</span></h1>
+      <p class="welcome-subtitle">getting better <span>·</span> having fun <span>·</span> learning python</p>
+      <button id="enter-button" class="enter-button" type="button">enter</button>
+    </main>
+  </section>
+
+  <main id="main-screen" class="page" hidden>
+    <header class="page-header">
+      <div class="site-identity">
+        <img class="profile-avatar" src="assets/profile.png" alt="tidyi profile picture">
+        <span>tidyi<span class="wordmark-slash">/</span>terminal</span>
+      </div>
+      <button id="back-button" class="back-button" type="button" aria-label="Go back to the welcome screen">← <span>back</span></button>
+    </header>
+
+    <section class="terminal" aria-label="Interactive terminal">
+      <header class="titlebar">
+        <div class="window-lights" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="window-title">tidyi@system: ~</span>
+      </header>
+
+      <div class="terminal-body">
+        <div class="boot-message">
+          <p class="boot-title"><span class="prompt-symbol">&gt;</span> session initialized</p>
+          <div class="profile-lines">
+            <p><span>user</span><b>tidyi</b></p>
+            <p><span>focus</span><b>getting better · having fun · learning python</b></p>
+            <p><span>interests</span><b>gaming · music · late nights · good stories · meeting people</b></p>
+          </div>
+          <p class="boot-footnote">Not sure where to start? Click <button class="inline-command" type="button" data-command="help">help</button>.</p>
+        </div>
+
+        <div id="history" aria-live="polite" aria-relevant="additions"></div>
+
+        <form id="command-form" autocomplete="off">
+          <label class="prompt" for="command-input">tidyi@system:~$</label>
+          <input id="command-input" name="command" type="text" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Enter a terminal command" placeholder="type a command...">
+        </form>
+      </div>
+
+      <footer class="statusbar">
+        <span class="terminal-location"><span class="status-dot" aria-hidden="true"></span> ~/tidyi</span>
+        <div class="music-control" aria-label="Background music controls">
+          <span class="track-title">Ax and the Hatchetmen - Loser Official Visualizer</span>
+          <div class="music-timeline">
+            <span id="music-time" class="music-time">0:00 / 3:32</span>
+            <div id="music-progress" class="music-progress" role="progressbar" aria-label="Music playback progress" aria-valuemin="0" aria-valuemax="212" aria-valuenow="0">
+              <span id="music-progress-fill" class="music-progress-fill"></span>
+            </div>
+          </div>
+          <button id="music-toggle" class="music-button" type="button" aria-pressed="false" title="Play or pause background music">
+            <span id="music-icon" aria-hidden="true">▶</span>
+            <span id="music-label">play</span>
+          </button>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <audio id="background-audio" src="assets/background.mp3" preload="auto" loop></audio>
+</body>
+</html>
